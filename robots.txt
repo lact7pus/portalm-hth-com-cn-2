@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lact7pus.github.io/portalm-hth-com-cn-2/sitemap.xml

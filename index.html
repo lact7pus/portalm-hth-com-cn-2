@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 使用指引</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f9f7f4;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      color: #2c2c2c;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fffcf9;
+      border-radius: 28px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.03), 0 1px 4px rgba(0,0,0,0.05);
+      padding: 3rem 2.5rem;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1rem 0.6rem; }
+      .page { padding: 2rem 1.4rem; border-radius: 20px; }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 520;
+      letter-spacing: 0.02em;
+      color: #1f1f1f;
+      margin-bottom: 0.2rem;
+      border-left: 6px solid #b7a28b;
+      padding-left: 1.2rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #716b64;
+      margin: 0.5rem 0 2rem 1.8rem;
+      border-bottom: 1px solid #e8e1d9;
+      padding-bottom: 0.8rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin: 2rem 0 1.8rem;
+    }
+
+    @media (max-width: 520px) {
+      .intro-grid { grid-template-columns: 1fr; }
+    }
+
+    .info-card {
+      background: #f6f1eb;
+      border-radius: 18px;
+      padding: 1.6rem 1.4rem;
+    }
+
+    .info-card h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #3a342e;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.01em;
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+      color: #4b4540;
+    }
+
+    .info-card a {
+      color: #7f6959;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #cbb9a8;
+      font-weight: 450;
+    }
+
+    .info-card a:hover {
+      color: #4a3f36;
+      text-decoration-color: #8f7a68;
+    }
+
+    .quote-block {
+      background: #efeae2;
+      border-radius: 18px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0;
+      position: relative;
+      font-style: normal;
+    }
+
+    .quote-block::before {
+      content: "“";
+      font-size: 3rem;
+      color: #b7a28b;
+      position: absolute;
+      top: -0.2rem;
+      left: 0.8rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .quote-block p {
+      font-size: 0.98rem;
+      color: #3f3b36;
+      margin-left: 1.6rem;
+    }
+
+    .notice-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .notice-item {
+      flex: 1 1 200px;
+      background: #fffbf5;
+      border: 1px solid #e4dbd0;
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem 0.9rem;
+    }
+
+    .notice-item .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9e8e7e;
+      border-bottom: 1px dashed #d5c9bb;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .notice-item p {
+      font-size: 0.88rem;
+      color: #4d4640;
+    }
+
+    .faq-mini {
+      background: #f9f5f0;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #3f3a34;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item .q {
+      font-weight: 470;
+      color: #4d3f35;
+      min-width: 3.6rem;
+    }
+
+    .faq-item .a {
+      color: #4f4943;
+      font-size: 0.92rem;
+    }
+
+    .footer-note {
+      margin-top: 2.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e6ddd3;
+      font-size: 0.85rem;
+      color: #7c736a;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    .footer-note a {
+      color: #7f6a5a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .sentence-link {
+      font-weight: 440;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>华体会 · 站点速览</h1>
+  <div class="subhead">从一处标识读懂服务方向</div>
+
+  <p style="font-size:1.02rem; color:#3f3b37; margin-bottom:1.6rem;">
+    初次来到这个地址，你可能想快速判断它提供什么、是否与你有关。下面以目录式结构整理了几块信息，帮助你理解网站属性、使用场景和需要注意的地方。<a href="https://portalm-hth.com.cn" class="sentence-link">华体会</a> 这个名称贯穿其中，它是整个站点的核心标识。
+  </p>
+
+  <div class="intro-grid">
+    <div class="info-card">
+      <h2>📂 功能定位</h2>
+      <p>该网站是一个聚合型门户，围绕“华体会”品牌提供信息展示、服务引导与内容索引。不局限于单一功能，更像一个知识型入口，帮你快速定位相关资源。</p>
+    </div>
+    <div class="info-card">
+      <h2>🧭 适用人群</h2>
+      <p>适合希望了解<a href="https://portalm-hth.com.cn">华体会</a>背景、寻找对应服务模块、或需要获取相关说明的新用户与回头访客。页面结构偏向查阅而非操作。</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <p>从设计上看，这个站点更像一本打开的目录——它不急于让你做任何事，而是先展示“这里有什么”。<a href="https://portalm-hth.com.cn">华体会</a> 三个字在多个板块出现，既作为品牌指代，也充当信息锚点。</p>
+  </div>
+
+  <div class="notice-area">
+    <div class="notice-item">
+      <div class="label">提示</div>
+      <p>站内链接多指向子页面或外部资源。建议先浏览首页概览，再根据兴趣进入具体分区。部分功能可能需要登录或注册。</p>
+    </div>
+    <div class="notice-item">
+      <div class="label">注意</div>
+      <p>所有内容均以官方站点实时展示为准。本页仅作静态介绍，不涉及任何操作引导或跳转承诺。</p>
+    </div>
+  </div>
+
+  <div class="faq-mini">
+    <h3>❓ 常见疑问（摘要）</h3>
+    <div class="faq-item">
+      <span class="q">Q：</span>
+      <span class="a">这个网站是做什么的？—— 一个围绕「华体会」品牌搭建的信息与服务平台，兼具索引与展示功能。</span>
+    </div>
+    <div class="faq-item">
+      <span class="q">Q：</span>
+      <span class="a">需要下载软件吗？—— 不需要，所有内容基于浏览器访问，<a href="https://portalm-hth.com.cn">华体会</a> 网站本身无需额外安装。</span>
+    </div>
+    <div class="faq-item">
+      <span class="q">Q：</span>
+      <span class="a">内容更新频率？—— 建议定期访问首页公告区域，留意最新信息。</span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>本页为静态介绍，所有信息指向 <a href="https://portalm-hth.com.cn">华体会</a> 官方站点。请以实际页面为准。</p>
+  </div>
+
+</div>
+</body>
+</html>
