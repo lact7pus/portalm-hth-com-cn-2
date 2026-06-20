@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 从一局游戏到一种态度</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9e7 0%, #ffe0b2 50%, #ffccbc 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.7;
+            color: #3e2c1b;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: rgba(255, 250, 245, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 44px;
+            padding: 2.8rem 2.6rem 3.2rem;
+            box-shadow: 0 20px 40px -12px rgba(160, 90, 50, 0.30);
+            transition: all 0.25s ease;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.2rem; }
+            .card { padding: 2rem 1.5rem; border-radius: 32px; }
+        }
+
+        h1 {
+            font-size: 2.35rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #4e2c1a;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(135deg, #bf6f4a, #8b4f2e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7a5a42;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #edd7cb;
+        }
+
+        .hero-tagline {
+            background: #f1e4da;
+            padding: 1rem 1.4rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 500;
+            color: #4f301e;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-tagline span {
+            background: #d9b8a3;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            color: #2d1b0f;
+            margin-left: 0.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.3rem;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+        }
+
+        .quote-block {
+            background: #f7ede6;
+            border-left: 6px solid #bb8b72;
+            padding: 1.2rem 1.6rem;
+            border-radius: 20px 8px 8px 20px;
+            margin: 1.8rem 0;
+            color: #3f2b1c;
+            font-style: normal;
+        }
+
+        .quote-block strong {
+            color: #844f31;
+        }
+
+        .button-link-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .btn-soft {
+            display: inline-flex;
+            align-items: center;
+            background: #ffffffd9;
+            border: 1px solid #dcc9bc;
+            border-radius: 60px;
+            padding: 0.6rem 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #553a28;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(140, 80, 40, 0.06);
+        }
+
+        .btn-soft:hover {
+            background: #ffffff;
+            border-color: #b6886e;
+            box-shadow: 0 6px 12px rgba(150, 75, 30, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #b67f62;
+            border: 1px solid #a46d4f;
+            color: #fef6f0;
+        }
+
+        .btn-primary:hover {
+            background: #9d684b;
+            border-color: #845438;
+        }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            padding-top: 1.6rem;
+            border-top: 2px dashed #dcc9bc;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #4e2c1a;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #5e4634;
+            padding-left: 0.6rem;
+        }
+
+        .footer-note {
+            margin-top: 2.4rem;
+            font-size: 0.9rem;
+            color: #7a624e;
+            text-align: center;
+            border-top: 1px solid #e5d3c6;
+            padding-top: 1.6rem;
+        }
+
+        a {
+            color: #8a5c3f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #bd7e5a;
+        }
+
+        .inline-link {
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e1cec0;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>爱游戏体育</h1>
+    <div class="subhead">不止是比分与赛事，更是一种日常陪伴</div>
+
+    <div class="hero-tagline">
+        ⚡ 快速识别 · 如果你在找一处能聊体育、看赛况、放松心情的地方
+        <span>这里刚好</span>
+    </div>
+
+    <p class="intro-text">
+        第一次点开 <a href="https://m-beta-aiyouxi.com" class="inline-link">爱游戏体育</a> 的人，往往会先问一句：“这到底是什么？” 其实答案很简单——这是一个把体育资讯、赛事讨论和轻互动融合在一起的小角落。没有复杂的注册门槛，也没有铺天盖地的弹窗，更像是一位懂球的朋友，坐在对面跟你聊聊最近几场有意思的比赛。
+    </p>
+
+    <p>
+        很多人习惯在周末打开它，看看有没有遗漏的精彩集锦，或者只是翻一翻评论区里那些有趣的球迷梗。哪怕你只是偶尔关注体育，也能在这里找到一种刚刚好的节奏：信息量不大不小，气氛不吵不闹。
+    </p>
+
+    <div class="quote-block">
+        <strong>一位常访问的用户说：</strong> “以前要看体育消息得装好几个应用，现在我只在有空时打开爱游戏体育，看看首页推荐，有时还能发现一些小众运动的文章，挺舒服的。”
+    </div>
+
+    <p>
+        这种“舒服”其实来自几个细节：内容排版留有呼吸感，配色不刺眼，评论区的氛围也比较温和。而且它没有把体育包装成“必须热血的战场”，而是允许你以旁观者、爱好者、甚至偶尔路过的角度去参与。
+    </p>
+
+    <div class="button-link-wrapper">
+        <a href="https://m-beta-aiyouxi.com" class="btn-soft btn-primary">爱游戏体育</a>
+        <span class="btn-soft" style="cursor:default;">📋 日常浏览 · 无强制推送</span>
+    </div>
+
+    <p>
+        如果你还在犹豫“这网站适不适合我”，不妨换个角度：不必把它当成一个需要投入时间的主页，而是当成一个可以偶尔顺路逛逛的休息站。比如午休时看看今日赛事短评，晚上睡前翻一翻讨论帖，都不用花太多精力。
+    </p>
+
+    <hr>
+
+    <div class="faq-mini">
+        <div class="faq-item">
+            <span class="faq-q">❓ 需要注册吗？</span>
+            <span class="faq-a">不需要。直接访问 <a href="https://m-beta-aiyouxi.com">爱游戏体育</a> 即可浏览大部分内容，部分互动功能可选登录。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">❓ 内容更新频率如何？</span>
+            <span class="faq-a">每天都有新鲜内容，但不会刷屏式推送。更看重质量而非数量。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">❓ 移动端体验怎么样？</span>
+            <span class="faq-a">适配手机浏览器，页面轻量，加载快，操作顺手。</span>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span>从一局游戏到一种态度 · 有空来坐坐</span>
+    </div>
+</div>
+</body>
+</html>
