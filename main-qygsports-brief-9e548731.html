@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>奇异果体育 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f6fbfa;
+      color: #1a2a2f;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    /* 网格卡片风格 */
+    .grid-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 6px 20px rgba(0, 80, 80, 0.06), 0 2px 6px rgba(0, 50, 50, 0.03);
+      transition: transform 0.2s, box-shadow 0.25s;
+    }
+
+    .grid-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(20, 100, 100, 0.08);
+    }
+
+    /* 蓝绿色点缀 */
+    .accent-border {
+      border-left: 5px solid #1f9a8e;
+      padding-left: 0.9rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #d0f0ec;
+      color: #116a63;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      margin-bottom: 0.6rem;
+    }
+
+    /* hero 区域 */
+    .hero {
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0c3d3a;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #3c5e5b;
+      max-width: 680px;
+      border-left: 4px solid #1f9a8e;
+      padding-left: 1.1rem;
+      margin-top: 0.2rem;
+    }
+
+    .hero .sub a {
+      color: #0b6b62;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid rgba(31, 154, 142, 0.3);
+      transition: border-bottom 0.15s;
+    }
+
+    .hero .sub a:hover {
+      border-bottom-color: #1f9a8e;
+    }
+
+    /* 摘要 + 亮点网格 */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .summary-card {
+      grid-column: 1 / -1;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+    }
+
+    .highlight-item {
+      background: white;
+      padding: 1.2rem 1.4rem;
+      border-radius: 16px;
+      border: 1px solid #deece9;
+      box-shadow: 0 2px 6px rgba(0,60,50,0.02);
+    }
+
+    .highlight-item h3 {
+      font-size: 1.1rem;
+      color: #0d4f49;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .highlight-item h3::before {
+      content: "◆";
+      color: #1f9a8e;
+      font-size: 0.8rem;
+    }
+
+    .highlight-item p {
+      font-size: 0.92rem;
+      color: #2c4643;
+    }
+
+    /* 使用建议 + 场景 */
+    .advice-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .advice-card {
+      background: white;
+      padding: 1.6rem 1.8rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0, 70, 65, 0.04);
+    }
+
+    .advice-card h2 {
+      font-size: 1.3rem;
+      color: #0b423e;
+      border-bottom: 2px solid #c6e3de;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .advice-card ul, .advice-card p {
+      font-size: 0.95rem;
+      color: #1e3c3a;
+    }
+
+    .advice-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .advice-card li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .advice-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #1f9a8e;
+      font-weight: bold;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #edf7f5;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.2rem;
+      color: #0b423e;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-summary details {
+      margin: 0.6rem 0;
+      border-bottom: 1px solid #caddd8;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-summary summary {
+      font-weight: 500;
+      color: #1d4a45;
+      cursor: pointer;
+      padding: 0.2rem 0;
+    }
+
+    .faq-summary summary::-webkit-details-marker {
+      color: #1f9a8e;
+    }
+
+    .faq-summary p {
+      font-size: 0.9rem;
+      color: #2e514c;
+      margin-top: 0.3rem;
+      padding-left: 0.5rem;
+    }
+
+    .footnote {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #5b7974;
+      padding: 1.5rem 0 0.5rem;
+      border-top: 1px solid #d4e6e1;
+    }
+
+    .footnote a {
+      color: #0b6b62;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      body {
+        padding: 0 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero .sub {
+        font-size: 1rem;
+      }
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+      .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .advice-section {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+      .faq-summary {
+        padding: 1.4rem 1.2rem;
+      }
+      .grid-card {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .highlight-item h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero -->
+  <header class="hero grid-card">
+    <span class="badge">产品说明 · 持续迭代</span>
+    <h1>奇异果体育 · 运动数据与体验</h1>
+    <div class="sub">
+      从赛事追踪到训练辅助，<a href="https://main-qygsports.com">奇异果体育</a> 提供基于真实场景的功能模块，帮助用户更系统地理解运动表现。产品聚焦数据洞察与用户自主控制，不夸大效果，不替代专业指导。
+    </div>
+  </header>
+
+  <!-- 摘要 + 亮点 -->
+  <section class="intro-grid">
+    <div class="summary-card grid-card accent-border">
+      <p style="font-size:0.95rem; margin-bottom:0.2rem;">
+        <strong>摘要</strong> —— 奇异果体育围绕“运动数据管理”与“内容聚合”两个核心设计，覆盖赛事分析、个人训练记录、策略社区三个维度。平台不提供医疗或健康诊断，所有数据仅供参考，使用者需结合自身情况判断。
+      </p>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h3>结构化数据看板</h3>
+        <p>提供运动频次、强度区间、恢复周期的可视化概览，支持自定义筛选周期。所有数据本地化处理，用户可随时导出。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>场景化内容聚合</h3>
+        <p>根据用户关注的运动类型（球类、耐力、力量等）推荐相关赛事摘要、技术解读与训练思路，减少信息噪音。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>轻量社区交互</h3>
+        <p>用户可创建公开或私密的训练话题，围绕具体运动场景交流。社区内容经基础审核，不鼓励绝对化断言。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>克制型提醒机制</h3>
+        <p>基于用户设定的运动目标发送温和提醒，不推送诱导性通知，不收集敏感生物特征数据。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用建议 + 场景 -->
+  <section class="advice-section">
+    <div class="advice-card">
+      <h2>使用建议</h2>
+      <ul>
+        <li>将平台数据作为个人训练的参考维度之一，建议结合教练或运动医学意见。</li>
+        <li>定期核对数据源：手动输入的记录请确认准确性，自动同步的数据仅做辅助参考。</li>
+        <li>善用「导出」功能保存历史数据，避免因平台调整导致信息不可用。</li>
+        <li>社区内交流时注意保护个人隐私，勿公开住址、证件等敏感信息。</li>
+      </ul>
+    </div>
+    <div class="advice-card">
+      <h2>常见场景</h2>
+      <ul>
+        <li><strong>周训练复盘：</strong> 查看过去七天的强度分布，调整下周负荷。</li>
+        <li><strong>赛事跟踪：</strong> 关注特定联赛或球员数据，辅助战术理解。</li>
+        <li><strong>团队协作：</strong> 与队友共享基础训练记录（需双方同意），促进配合。</li>
+        <li><strong>内容筛选：</strong> 按运动类型或难度筛选文章与视频，节省搜索时间。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要  -->
+  <section class="faq-summary">
+    <h2>常见简要问答</h2>
+    <details>
+      <summary>奇异果体育需要注册才能使用吗？</summary>
+      <p>浏览部分内容无需注册，但使用数据记录、社区互动等功能需创建账户。注册信息仅用于功能权限与基础安全验证。</p>
+    </details>
+    <details>
+      <summary>平台数据是否免费？</summary>
+      <p>基础数据看板与内容浏览免费开放。部分高级分析模块或社区功能可能采用订阅制，具体以 <a href="https://main-qygsports.com" style="color:#0b6b62;text-decoration:underline;">奇异果体育</a> 页面公示为准。</p>
+    </details>
+    <details>
+      <summary>运动建议是否具备医学效力？</summary>
+      <p>平台所有内容均不属于医疗或康复建议。如有伤病或健康疑虑，请务必咨询执业医师或物理治疗师。</p>
+    </details>
+    <details>
+      <summary>如何删除我的历史数据？</summary>
+      <p>用户可通过账户设置页自主删除特定记录或全部数据。删除操作不可逆，建议提前导出备份。</p>
+    </details>
+  </section>
+
+  <!-- 可信但克制的访问说明 -->
+  <div style="margin: 1.8rem 0 1rem; padding: 0.8rem 1.2rem; background: transparent; border: 1px dashed #8bb8b2; border-radius: 30px; text-align: center; font-size: 0.9rem; color: #2a524d;">
+    <span>本页面为产品说明页，<a href="https://main-qygsports.com" style="color:#0b6b62;font-weight:600;">奇异果体育</a> 功能与政策以官方网站实时版本为准。我们不对第三方插件或未授权的二次开发承担责任。</span>
+  </div>
+
+  <!-- footer -->
+  <div class="footnote">
+    <span>内容仅供信息参考 | 无诱导承诺 | 理性使用运动工具</span><br>
+    <span style="opacity:0.6;">© 2025 · 产品说明 · 版本索引 3c85e76f5f5a3cec</span>
+  </div>
+</div>
+</body>
+</html>
