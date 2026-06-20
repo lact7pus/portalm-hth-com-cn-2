@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 从查询到理解的日常体育参考</title>
+    <style>
+        /* 极简留白 · 窄正文 · 清晰层级 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafcfb;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", sans-serif;
+            color: #1e2a2d;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .page-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* 标题层级 */
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.25rem;
+            color: #0b262e;
+            font-weight: 550;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #4f686e;
+            margin-bottom: 2.5rem;
+            border-left: 3px solid #cbdad6;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.55rem;
+            margin: 2.8rem 0 1rem 0;
+            color: #13343b;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 1.8rem 0 0.6rem 0;
+            color: #1f464e;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: #2b3f43;
+        }
+
+        a {
+            color: #096b5e;
+            text-decoration: underline 0.08em rgba(9, 107, 94, 0.25);
+            text-underline-offset: 0.2em;
+            transition: text-decoration-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #034f44;
+            text-decoration-color: #034f44;
+        }
+
+        /* hero 区 */
+        .hero-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 6px 20px rgba(0, 20, 20, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-card p {
+            font-size: 1.05rem;
+            color: #2e4d54;
+        }
+
+        .hero-link-sentence {
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+            background: #f0f5f3;
+            display: inline-block;
+            padding: 0.35rem 1rem 0.35rem 1rem;
+            border-radius: 40px;
+        }
+
+        /* 优势区：简洁卡片组 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(9, 60, 60, 0.02);
+            border: 1px solid #e5edeb;
+            transition: box-shadow 0.15s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 16px rgba(9, 60, 60, 0.04);
+        }
+
+        .feature-item .ft-icon {
+            font-size: 1.6rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #1a5b51;
+        }
+
+        .feature-item h3 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1rem;
+            color: #153d43;
+        }
+
+        .feature-item p {
+            font-size: 0.87rem;
+            margin-bottom: 0;
+            color: #3e5a5f;
+        }
+
+        /* 说明区（延伸阅读） */
+        .explain-block {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0;
+        }
+
+        .explain-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用/提示 */
+        .note-box {
+            background-color: #f1f7f4;
+            border-left: 4px solid #739e94;
+            padding: 1.2rem 1.5rem;
+            border-radius: 14px;
+            margin: 1.8rem 0;
+        }
+
+        .note-box p {
+            margin-bottom: 0.2rem;
+            font-size: 0.92rem;
+        }
+
+        /* FAQ摘要 */
+        .faq-section {
+            margin: 2.5rem 0 1.8rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #dde8e4;
+            padding: 1rem 0;
+        }
+
+        .faq-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #0b343b;
+            margin-bottom: 0.2rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-a {
+            font-size: 0.92rem;
+            color: #3d585e;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dae4e0;
+            font-size: 0.88rem;
+            color: #5c767b;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            border-bottom: 1px dotted #b3c9c2;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #034f44;
+        }
+
+        .footer-meta {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.78rem;
+            color: #81999d;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .hero-card {
+                padding: 1.6rem 1.2rem;
+            }
+
+            .explain-block {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        @media (min-width: 720px) {
+            .page-wrapper {
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero 区 -->
+    <div class="hero-card">
+        <h1>日常体育查询 · 对照 · 延伸</h1>
+        <div class="subhead">一份基于 <a href="https://m-globe-aiyouxi.com">爱游戏体育</a> 的参考笔记</div>
+        <p>
+            体育资讯与赛事数据日趋繁杂，日常查询时往往需要快速定位、横向对照与背景延伸。依托
+            <a href="https://m-globe-aiyouxi.com" style="text-decoration: underline;">爱游戏体育</a>
+            的信息框架，我们可以从赛程、队伍构成、规则演变等维度展开梳理。以下内容以知识性整理为主，供日常浏览与比较时使用。
+        </p>
+        <div class="hero-link-sentence">
+            ← 常用对照入口 · <a href="https://m-globe-aiyouxi.com">爱游戏体育</a>
+        </div>
+    </div>
+
+    <!-- 优势区：简洁卡片 -->
+    <section>
+        <h2>为什么适合日常对照</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="ft-icon">📋</span>
+                <h3>结构化条目</h3>
+                <p>联赛、杯赛、分级赛事按层级排列，减少反复跳转。适合边查询边对照。</p>
+            </div>
+            <div class="feature-item">
+                <span class="ft-icon">🔎</span>
+                <h3>参数并置</h3>
+                <p>积分、交锋记录、阵型趋势在同一页面中平行展示，方便横向比较。</p>
+            </div>
+            <div class="feature-item">
+                <span class="ft-icon">📎</span>
+                <h3>延伸阅读提示</h3>
+                <p>每项数据旁附带规则摘要或背景短文，利于理解而非单纯罗列。</p>
+            </div>
+            <div class="feature-item">
+                <span class="ft-icon">🧩</span>
+                <h3>渐进披露</h3>
+                <p>从基础赛程延伸至历史演变，适合不同熟悉程度的浏览者。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：延伸阅读风格 -->
+    <div class="explain-block">
+        <h2>从一场比赛到体系认知</h2>
+        <p>
+            浏览体育信息时，很多人会从某场焦点战切入，再扩展到该联赛的升降级规则或青训结构。例如，查询英超某场补赛时，自然延伸至积分榜中游队伍的欧战资格线。类似地，
+            <a href="https://m-globe-aiyouxi.com">爱游戏体育</a>
+            提供的赛事卡片往往整合了“当前排名 + 剩余场次 + 历史同期对比”，让对照不再需要开多个标签页。
+        </p>
+        <p>
+            另一常见场景是规则查询：越位条款的调整、篮球进攻时限的演变、网球计分制度的由来。在常规数据之外，保留一段简明背景说明，有助于将单条信息嵌入更大的知识背景。这也是本页面所倡导的“延伸式浏览”——不只看一个数字，也看它背后的逻辑。
+        </p>
+    </div>
+
+    <!-- 提示 / 小段落 -->
+    <div class="note-box">
+        <p><strong>提示：</strong> 对照时请留意数据更新日期。多数赛事页面会标注“更新于”时间戳，优先使用最近一周的赛程与排名。如对某项规则有疑问，可结合联盟官方文件与
+        <a href="https://m-globe-aiyouxi.com">爱游戏体育</a> 的注释部分互相验证。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-section">
+        <h2>常见疑问摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">Q：如何快速找到两支球队的历史交锋？</div>
+            <div class="faq-a">A：在队伍资料页通常设有“交锋记录”模块，按时间倒序排列。部分页面还提供主客场的细分对照。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Q：升降级附加赛规则在哪里看？</div>
+            <div class="faq-a">A：联赛规则板块或赛季总结页面有专项说明。举例：英冠升级附加赛采用单场淘汰+决赛制，具体轮次可在
+            <a href="https://m-globe-aiyouxi.com">爱游戏体育</a> 对应赛事下找到图解。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Q：数据中的“预期进球(xG)”如何理解？</div>
+            <div class="faq-a">A：xG 是基于射门位置、角度、防守压力等计算出的期望进球值。建议结合球队近期实际进球与失球一起对照，避免只看单一数据。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <span>日常参考 · <a href="https://m-globe-aiyouxi.com">爱游戏体育</a></span>
+        <span>赛事规则 · 阵容演变</span>
+        <span>历史赛季对比</span>
+        <span>术语说明</span>
+    </div>
+    <div class="footer-meta">
+        本页为知识性整理，信息仅供参考。具体以各联盟及官方发布为准。
+    </div>
+
+</div>
+</body>
+</html>
